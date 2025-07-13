@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web GIS Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Web GIS Dashboard: Flood & Dark Spot Analysis</h2>
+<div id="map"></div>
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<div id="controls">
+  <button id="export">⬇ Export GeoJSON</button>
+  <button id="reset">🔄 Reset Chart</button><br><br>
+  <label for="sentinelDate">🛰️ Sentinel Image:</label>
+ <select id="sentinelDate">
+  <option value="">-- Select Date --</option>
+  <option value="2020-03-01">2020-03-01</option>
+  <option value="2025-03-01">2025-03-01</option>
+</select>
+
+  <h4>Summary Chart showing Count by Category</h4>
+  <canvas id="summaryChart"></canvas>
+</div>
+
+
+<div id="legend">
+  <h4 style="margin: 0;">Legend</h4>
+  <p style="margin: 0;"><span style="background:blue;"></span> Flood-prone area</p>
+  <p style="margin: 0;"><span style="background:red;"></span> Dark spot</p>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
